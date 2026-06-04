@@ -1,0 +1,12 @@
+# Secrets for the LLM Gateway Proxy.
+# The "Deploy to Cloudflare" flow prompts for each of these values.
+# For local dev, copy this file to `.dev.vars` and fill in real values.
+
+# Cloudflare AI Gateway authentication token (Gateway settings → Authenticated gateway).
+CF_AIG_TOKEN=""
+
+# Microsoft Entra (Azure AD) tenant ID — the UUID of your directory.
+ENTRA_TENANT_ID=""
+
+# Microsoft Entra App Registration client ID — the audience inbound tokens must match.
+ENTRA_CLIENT_ID=""

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+    "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>PayloadContent</key>
+  <array>
+    <dict>
+      <key>PayloadType</key>
+      <string>com.anthropic.claudefordesktop</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>PayloadIdentifier</key>
+      <string>com.anthropic.claudefordesktop.gateway</string>
+      <key>PayloadUUID</key>
+      <string>0259F61B-D836-4316-8DE5-5DF582896E08</string>
+      <key>PayloadDisplayName</key>
+      <string>Claude Desktop Gateway Settings</string>
+      <key>disableDeploymentModeChooser</key>
+      <false />
+      <key>inferenceProvider</key>
+	  <string>gateway</string>
+	  <key>inferenceCredentialKind</key>
+	  <string>interactive</string>
+	  <key>inferenceGatewayBaseUrl</key>
+	  <string>https://llm-gateway.example.com/anthropic</string>
+	  <key>inferenceGatewayOidc</key>
+	  <string
+                >{"issuer":"https://login.microsoftonline.com/<ENTRA_TENANT_ID>/v2.0","clientId":"<ENTRA_CLIENT_ID>","bearerTokenType":"id_token"}</string>
+    </dict>
+  </array>
+  <key>PayloadDisplayName</key>
+  <string>Claude Desktop Cloudflare Gateway</string>
+  <key>PayloadIdentifier</key>
+  <string>com.anthropic.claudefordesktop.gateway.profile</string>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadUUID</key>
+  <string>4DD42905-35AB-43F3-98C2-4E5234F1D816</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+</dict>
+</plist>

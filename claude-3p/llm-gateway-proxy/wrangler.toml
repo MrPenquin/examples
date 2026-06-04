@@ -1,0 +1,22 @@
+name = "llm-gateway-proxy"
+main = "index.js"
+compatibility_date = "2024-01-01"
+
+# Defaults to a <name>.workers.dev subdomain. For a custom domain, uncomment and
+# set `pattern`, then redeploy. `custom_domain` requires the zone to be active on
+# Cloudflare in this account; to front it from elsewhere, drop `custom_domain` and
+# CNAME your hostname to the workers.dev subdomain instead.
+# [[routes]]
+# pattern = "ai-gateway.example.com"
+# custom_domain = true
+
+[vars]
+# Non-sensitive config. Edit on the deploy setup page or with `wrangler deploy --var`.
+CLOUDFLARE_ACCOUNT_ID = "<CLOUDFLARE_ACCOUNT_ID>"
+GATEWAY_NAME = "main"
+
+# Secrets are NOT defined here. The deploy flow prompts for the values listed in
+# .dev.vars.example; locally, set them with `wrangler secret put <NAME>`:
+#   CF_AIG_TOKEN     — Cloudflare AI Gateway auth token
+#   ENTRA_TENANT_ID  — Azure AD tenant ID (UUID)
+#   ENTRA_CLIENT_ID  — App Registration client ID (UUID)

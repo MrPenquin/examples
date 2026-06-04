@@ -1,0 +1,34 @@
+{
+  "name": "llm-gateway-proxy",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker that validates Microsoft Entra JWTs and proxies requests to Cloudflare AI Gateway.",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^3"
+  },
+  "cloudflare": {
+    "label": "LLM Gateway Proxy",
+    "products": ["Workers", "AI Gateway"],
+    "bindings": {
+      "CLOUDFLARE_ACCOUNT_ID": {
+        "description": "Your Cloudflare account ID. Found in the dashboard URL or **Workers & Pages → Overview**. Used to build the AI Gateway request path."
+      },
+      "GATEWAY_NAME": {
+        "description": "The name of your [AI Gateway](https://developers.cloudflare.com/ai-gateway/) (AI Gateway → your gateway). Defaults to `main`."
+      },
+      "CF_AIG_TOKEN": {
+        "description": "Cloudflare AI Gateway authentication token. Create one under your gateway's **Settings → Authenticated Gateway**, then enable authentication."
+      },
+      "ENTRA_TENANT_ID": {
+        "description": "Microsoft Entra (Azure AD) **tenant ID** (a UUID). Inbound tokens must be issued by `login.microsoftonline.com/<tenant>/v2.0`."
+      },
+      "ENTRA_CLIENT_ID": {
+        "description": "Microsoft Entra **App Registration client ID** (a UUID). Used as the expected `aud` (audience) claim on inbound tokens."
+      }
+    }
+  }
+}
