@@ -1,0 +1,11 @@
+{
+  "name": "acme-handbook",
+  "version": "1.0.0",
+  "description": "Acme engineering handbook as skills (coding standards, incident runbook) plus the read-only Acme Vault MCP for fetching approved config at runtime.",
+  "author": {
+    "name": "Acme Developer Experience",
+    "email": "devex@acme.example"
+  },
+  "homepage": "https://wiki.acme.example/handbook",
+  "installationPreference": "auto_install"
+}

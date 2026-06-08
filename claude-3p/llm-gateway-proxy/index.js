@@ -47,9 +47,16 @@ async function validateJwt(token, tenantId, clientId) {
   );
 
   const signingInput = new TextEncoder().encode(`${headerB64}.${payloadB64}`);
-  const signature = Uint8Array.from(b64urlDecode(sigB64), (c) => c.charCodeAt(0));
+  const signature = Uint8Array.from(b64urlDecode(sigB64), (c) =>
+    c.charCodeAt(0),
+  );
 
-  const valid = await crypto.subtle.verify("RSASSA-PKCS1-v1_5", key, signature, signingInput);
+  const valid = await crypto.subtle.verify(
+    "RSASSA-PKCS1-v1_5",
+    key,
+    signature,
+    signingInput,
+  );
   if (!valid) throw new Error("JWT signature invalid");
 
   return payload;
@@ -104,13 +111,6 @@ export default {
         userName: claims.name,
       }),
     );
-
-    // Strip any client-supplied identity headers
-    headers.delete("x-user-email");
-    headers.delete("x-user-department");
-    headers.delete("x-user-name");
-    headers.delete("cf-access-jwt-assertion");
-    headers.delete("cf-access-authenticated-user-email");
 
     const response = await fetch(target, {
       method: request.method,

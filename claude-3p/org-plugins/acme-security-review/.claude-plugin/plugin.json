@@ -1,0 +1,11 @@
+{
+  "name": "acme-security-review",
+  "version": "1.0.0",
+  "description": "Acme's mandatory pre-merge security & compliance reviewer. Adds the /acme-secreview command, a security-reviewer subagent, and a guardrail hook that blocks writes to secrets files.",
+  "author": {
+    "name": "Acme Platform Security",
+    "email": "appsec@acme.example"
+  },
+  "homepage": "https://wiki.acme.example/appsec/claude-plugins",
+  "installationPreference": "required"
+}

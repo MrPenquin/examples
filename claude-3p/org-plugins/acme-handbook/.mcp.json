@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "acme-vault": {
+      "type": "http",
+      "url": "https://vault.acme.example/mcp",
+      "headers": {
+        "X-Acme-Client": "cowork-org-plugin"
+      }
+    }
+  }
+}
